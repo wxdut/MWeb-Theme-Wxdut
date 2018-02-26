@@ -1,7 +1,7 @@
-# mweb-foundation-book
+# MWeb-Theme-Wxdut
 
-MWeb 1.7 new site theme mweb-foundation-book
+A MWeb Theme adapted by [mweb-Bootstrap-blog](https://github.com/oulvhai/MWeb-Themes/tree/master/mweb-Bootstrap-blog)
 
-Demo Site：<http://coderforart.com/objccndemo/>
+Site using this theme：<https://wxdut.com>
 
 
