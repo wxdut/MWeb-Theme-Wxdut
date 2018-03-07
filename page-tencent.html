@@ -1,0 +1,113 @@
+<script type="text/javascript">
+$(function() {
+    $('#menu-tencent').addClass('active');
+});
+</script>
+<div class="container" id="content-wrap">
+    <div class="page-post">
+        <h2 class="blog-post-title">{{post.title}}</h2>
+        <hr />
+        <div class="page-content content-responsive">
+            {{ post.content }}
+        </div>
+    </div>
+</div>
+<div class="container" id="content-wrap">
+    <form class="needs-validation" novalidate method="post" id="form">
+        <div class="form-group">
+            <label for="name">姓名（请填写真实姓名）</label>
+            <input type="text" class="form-control" id="name" placeholder="张三" required>
+        </div>
+        <!-- <div class="form-group">
+            <label for="email">邮箱（内推成功后会收到收集信息的邮件，非常重要）</label>
+            <input type="email" class="form-control" id="email" placeholder="tencent@gmail.com" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">手机（7 * 24 在线）</label>
+            <input type="d" class="form-control" id="phone" placeholder="11位手机号" required>
+        </div>
+        <div class="form-group">
+            <label for="school">学校（学校全称）</label>
+            <input type="text" class="form-control" id="school" placeholder="大连理工大学" required>
+        </div>
+        <div class="form-group">
+            <label for="major">专业（专业大类）</label>
+            <input type="text" class="form-control" id="major" placeholder="软件工程" required>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="agreement" required>
+                <label class="form-check-label" for="agreement">同意内推协议</label>
+                <div class="invalid-feedback">
+                    请先同意内推协议
+                </div>
+            </div>
+        </div> -->
+        <div>
+            <button type="submit" class="btn btn-primary">立即提交</button>
+        </div>
+    </form>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">信息确认</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    请确保提交的信息准确无误。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">重新编辑</button>
+                    <button type="button" class="btn btn-primary" id="confirm-commit-btn">确认提交</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#confirm-commit-btn').click(function () {
+                $('#modal').modal('hide');
+                var name = $('#name').val();
+                alert(name);
+            });
+        });
+        (function() {
+            'use strict';
+            $('form').submit(function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    $('#modal').modal('show');
+                }
+                form.classList.add('was-validated');
+                return false;
+            });
+            // window.addEventListener('load', function() {
+
+            //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            //     var forms = document.getElementsByClassName('needs-validation');
+            //     // Loop over them and prevent submission
+            //     var validation = Array.prototype.filter.call(forms, function(form) {
+            //         form.addEventListener('submit', function(event) {
+            //             if (form.checkValidity() === false) {
+            //                 event.preventDefault();
+            //                 event.stopPropagation();
+            //             } else {
+            //                 // $('#modal').modal('show')
+            //                 $('#modal').modal({
+            //                     show: true,
+            //                     remote: 'index.html'
+            //                 });
+            //             }
+            //             form.classList.add('was-validated');
+            //         }, false);
+            //     });
+            // }, false);
+        })();
+    </script>
+</div>
