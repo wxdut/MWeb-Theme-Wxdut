@@ -234,3 +234,18 @@ vertical-align: middle; line-height: 19px; font-size: 14px; font-family: 'Helvet
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+
+/*
+ * Top Banner
+ */
+.top-banner {
+    top: 0;
+    left: 0;
+    background-color: #ff00ff;
+    width: 100%;
+    height: 200px;
+}
+
+
+
