@@ -23,10 +23,14 @@ $(function() {
             <input type="email" class="form-control" id="email" placeholder="tencent@gmail.com" required>
         </div>
         <div class="form-group">
-            <label for="phone">手机（7 * 24 在线）</label>
-            <input type="text" class="form-control" id="phone" placeholder="11位手机号" required>
-            <div class="invalid-tooltip">
-                请输入正确的手机号
+            <label for="phone">手机（海外手机号请先选择国家代码）</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <select id="selectpicker" class="selectpicker" data-live-search="true">
+                    </select>
+                    <!-- <input type="text" class="" id="d" value="86" required> -->
+                </div>
+                <input type="text" class="form-control" id="phone" placeholder="手机号码" required>
             </div>
         </div>
         <div class="form-group">
@@ -48,7 +52,7 @@ $(function() {
         </div>
         <div class="row">
             <div class="form-group col">
-                <input type="text" class="form-control" id="verify-code" value="000000" placeholder="请输入接收到的验证码">
+                <input type="text" class="form-control" id="verify-code" placeholder="请输入接收到的验证码">
             </div>
             <div class="col">
                 <button type="button" class="btn btn-primary" id="send-sms-code-btn">发送验证码</button>
@@ -93,7 +97,7 @@ $(function() {
             $.ajax({
                 url: 'https://wxdut.com/index.php/tencent/sendSmsCode',
                 type: "GET",
-                data: { "phone": $.trim($('#phone').val()) },
+                data: { "phone": $.trim($('#phone').val()), "countryCode": $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1) },
                 success: function(data) {
                     if (data.ret == 0) {
                         alert("验证码发送成功");
@@ -103,6 +107,23 @@ $(function() {
                 }
             })
         });
+
+        var countryCodeStr = "";
+        $.getJSON('https://wxdut.com/asset/data/country_code.json', function(json, textStatus) {
+            $.each(json, function(index, val) {
+                countryStr = val['en'] + " " + val['zh'] + " +" + val['code'];
+                if (val['code'] == 86) {
+                    countryCodeStr += "<option data-tokens='" + countryStr + "' selected >" + countryStr + "</option>";
+                } else {
+                    countryCodeStr += "<option data-tokens='" + countryStr + "'>" + countryStr + "</option>";
+                }
+                $("#selectpicker").html("");
+                $('#selectpicker').append(countryCodeStr);
+                $('select[name=selValue]').val(2);
+                $('#selectpicker').selectpicker('refresh');
+            });
+        });
+
     });
     (function() {
         'use strict';
@@ -118,7 +139,7 @@ $(function() {
             $.ajax({
                 url: 'https://wxdut.com/index.php/tencent/verifySmsCode',
                 type: 'GET',
-                data: { "phone": $.trim($('#phone').val()), "code": $.trim($('#verify-code').val()), "name": $.trim($('#name').val()), "email": $.trim($('#email').val()), "school": $.trim($('#school').val()), "major": $.trim($('#major').val()) },
+                data: { "phone": $.trim($('#phone').val()), "code": $.trim($('#verify-code').val()), "name": $.trim($('#name').val()), "email": $.trim($('#email').val()), "school": $.trim($('#school').val()), "major": $.trim($('#major').val()), "countryCode": $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1) },
                 success: function(data) {
                     if (data.ret == 0) {
                         $('#modal').modal('show');
@@ -160,7 +181,7 @@ $(function() {
     }
 
     function check_phone() {
-        return /^1[34578]\d{9}$/.test($.trim($('#phone').val()));
+        return $.trim($('#phone').val() != "");
     }
 
     function check_name() {
