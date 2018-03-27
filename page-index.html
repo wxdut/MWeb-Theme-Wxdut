@@ -26,21 +26,19 @@
             </div>
             <!-- /.blog-post -->
             {% /for %}
-            <nav>
-                <ul class="pager">
+            <ul class="nav justify-content-center pager">
                     {% if prevPageUrl.length %}
-                    <li class=""><a href="{{ prevPageUrl }}"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ prevPageUrl }}"><span aria-hidden="true">&larr;</span> 上一页</a></li>
                     {% else %}
-                    <li class="  disabled "><a href="#index"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+                    <li class="nav-item "><a class="nav-link disabled" href="#index"><span aria-hidden="true">&larr;</span> 上一页</a></li>
                     {% /if %}
-                    <li class=""><a href="archives.html">归档</a></li>
+                    <li class="nav-item"><a class="nav-link" href="archives.html">归档</a></li>
                     {% if nextPageUrl.length %}
-                    <li class=""><a href="{{ nextPageUrl }}">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ nextPageUrl }}">下一页 <span aria-hidden="true">&rarr;</span></a></li>
                     {% else %}
-                    <li class=" disabled "><a href="#index">下一页 <span aria-hidden="true">&rarr;</span></a></li>
+                    <li class="nav-item"><a class="nav-link disabled" href="#index">下一页 <span aria-hidden="true">&rarr;</span></a></li>
                     {% /if %}
-                </ul>
-            </nav>
+            </ul>
         </div>
         <!-- /.blog-main -->
         <!-- slider start -->
