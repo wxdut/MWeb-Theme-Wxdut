@@ -36,42 +36,6 @@ h3, .h3,h4, .h4{padding-top: 0.8em; }
 pre{background-color: #f8f8f8;border-radius:0px;}   
 #content-wrap{ padding-top:2.5em; padding-bottom: 2.5em;}
 
-.product-name{  background: url('../img/header-bg.jpg') no-repeat center top;
-  background-size: cover;
-  height: 370px;
-}
-.banner-head {
-        width: 100%;text-align: left;
-        font-family: Chalkboard,Helvetica, Arial, sans-serif; 
-        font-family: 'Myriad Pro','Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif;
-        padding:0.5em;
-        padding-left: 0;
-        padding-top: 15px;
-        font-size: 2.8em;
-        color: #fff;
-        margin-bottom: 0; padding-bottom: 0;
-    }
-.product-name h3{ margin: 0; padding: 0.5em; color: #fff; width: 100%; text-align: left; padding-left: 0; font-size: 1.2em;}
-.product-name p{ color: #fff;}
-
-#app_info{ padding-top: 3em; }
-.app_download{ padding-top: 3em; }
-.app_download .download-mweb-store{font-family: 'Myriad Pro','Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif; 
-padding-top: 8px; font-size: 15px; font-weight: normal;}
-.app_download .download-mweb-store a{ text-decoration: none; color: #eee; }
-.app_download .download-mweb-store a strong{ color: #fff; text-decoration: underline; }
-.app_download .download-mweb-store a em{ font-size: 13px;}
-
-a.btn-download{ display: inline-block; }
-a.btn-buy-mas{ display: inline-block; padding-right: 20px; }
-a.btn-download img{ width: 144px; }
-a.btn-buy-mas img{ width: 224px; }
-
-.images-list,.images-list li{ list-style: none; margin: 0 !important; padding: 0 ;}
-.images-list li{ width: 145px; display: block; float: left; padding-right: 4px; padding-top: 4px;}
-@media (min-width: 768px) and (max-width: 991px) {
-.images-list li{ width: 110px;}
-}
 #index-container{ padding-top: 2.5em;}
 #index-container h1{font-family: 'Myriad Pro','Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif; font-size: 2em;}
 #index-container hr { margin-top: 2.0em; margin-bottom: 2.0em;}
@@ -81,40 +45,16 @@ a.btn-buy-mas img{ width: 224px; }
 #index-container .btn:active:focus{
   outline: 0px;
 }
-.img_content p{ font-size: 14px; color: #666; }
-.img_content_buttons{ padding:0.5em; text-align: center; padding-bottom: 1em; }
-.mark_list_wrap p{  vertical-align: middle; padding-left: 25px; font-size: 13px; margin-bottom: 8px; }
-span.mark_number{display: inline-block; margin-top: -4px; margin-left: -22px; width: 18px; height: 18px; background: #a61010; border-radius: 9px; text-align: center;
-vertical-align: middle; line-height: 19px; font-size: 14px; font-family: 'Helvetica Neue', 'Arial', sans-serif; color: #fff;}
 
-.mark_list_wrap2{ padding: 8px 0; }
-.mark_list_wrap2 p{ padding-left: 0;font-size: 13px;  }
-.mark_list_wrap2 span.mark_number{ margin-left: 0; }
-.help-content h3{ font-size: 20px; font-weight: bold; }
-.help-content{ font-size: 13px; }
 /*
  * Override Bootstrap's default container.
  */
-
 @media (min-width: 1200px) {
   .container {
     width: 970px; 
   }
 }
 
-@media (max-width: 767px) {
-  .banner-head{ font-size: 2.1em; }
-  .product-name h3{font-size: 1.0em;}
-  .mweb-logo{  }
-  #app_info{ padding-top: 1.5em; }
-  .app_download{ padding-top: 1.5em; }
-  .app_download>div{padding-left: 0;}
-
-  a.btn-download{ display: inline-block; }
-  a.btn-buy-mas{ display: inline-block; padding-right: 4px; }
-  a.btn-download img{ width: 108px; }
-  a.btn-buy-mas img{ width: 168px; }
-}
 /*
  * Masthead for nav
  */
