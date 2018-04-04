@@ -8,7 +8,6 @@ $(function() {
         <div class="col-sm-8 blog-main">
             <div class="content-responsive">
                 <h1>归档</h1> {% for p in posts %} {% if p.year.length %}
-                <hr />
                 <h2>{{ p.year }}</h2> {% /if %}
                 <h3><a href="{{ p.url }}">{{ p.title }}</a>
 <br />
