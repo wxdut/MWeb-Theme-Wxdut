@@ -156,13 +156,18 @@ pre{background-color: #f8f8f8;border-radius:0px;}
 .blog-post {
   margin-bottom: 60px;
 }
-.blog-post-title {
-
+.blog-post-title > a,
+.blog-post-title > a:hover,
+.blog-post-title > a:focus{
+  color: #000;
+  text-decoration:none;
 }
 .blog-post-meta {
   margin-bottom: 20px;
   color: #999;
 }
+
+
 
 
 /*
