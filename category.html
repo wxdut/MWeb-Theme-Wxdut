@@ -3,7 +3,7 @@
         <div class="col-sm-8 blog-main">
             {% for p in posts %}
             <div class="blog-post">
-                <h2 class="blog-post-title">{{ p.title }}</h2>
+                <h2 class="blog-post-title"><a href="{{ p.url }}">{{ p.title }}</a></h2>
                 <p class="blog-post-meta">{{ p.date }} {% if p.cats.@count %}&nbsp;posted in {% /if %} {% for cat in p.cats %}
                     <a class='category' href='{{ cat.url }}'>{{ cat.name }}</a>&nbsp; {% /for %} {% if p.cats.@count %} {% /if %}
                 </p>
