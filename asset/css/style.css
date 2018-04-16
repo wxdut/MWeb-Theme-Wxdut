@@ -9,22 +9,6 @@ body {
   font-size: 1.0em;  line-height: 1.6em;
 }
 
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-  margin-top: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  color: #333;
-}
-h1, .h1,h2, .h2{  margin-bottom: 0.3em; font-size: 26px;}
-
-h3, .h3,h4, .h4{padding-top: 0.8em; }
-
 .content-responsive h1{ padding-top: 1.0em; font-size: 24px;}
 .content-responsive h2{ padding-top: 1.0em;font-size: 22px;}
 .content-responsive h3{ padding-top: 0.8em;font-size: 20px;}
@@ -34,26 +18,6 @@ h3, .h3,h4, .h4{padding-top: 0.8em; }
 .container ul{ margin-left: 20px; padding-left: 0px;}
 
 pre{background-color: #f8f8f8;border-radius:0px;}   
-#content-wrap{ padding-top:2.5em; padding-bottom: 2.5em;}
-
-#index-container{ padding-top: 2.5em;}
-#index-container h1{font-family: 'Myriad Pro','Helvetica Neue', 'Helvetica', 'STHeitiSC-Light', 'Arial', sans-serif; font-size: 2em;}
-#index-container hr { margin-top: 2.0em; margin-bottom: 2.0em;}
-#index-container h3,#index-container h4 { padding-top: 0;}
-#index-container h2{ font-size: 22px; font-weight: bold; }
-#index-container .btn:focus,
-#index-container .btn:active:focus{
-  outline: 0px;
-}
-
-/*
- * Override Bootstrap's default container.
- */
-@media (min-width: 1200px) {
-  .container {
-    width: 970px; 
-  }
-}
 
 /*
  * Masthead for nav
