@@ -12,7 +12,7 @@
                 <p class="blog-post-meta">{{ post.date }} {% if post.cats.@count %}&nbsp;posted in {% /if %} {% for cat in post.cats %}
                     <a class='category' href='{{ cat.url }}'>{{ cat.name }}</a>&nbsp; {% /for %} {% if post.cats.@count %} {% /if %}
                 </p>
-                <div class="content-responsive">
+                <div class="content-responsive" id="post-content">
                     {{ post.content }}
                 </div>
             </div>
@@ -23,3 +23,29 @@
         </div>
         <!-- /.blog-main -->
         <!-- slider start -->
+
+
+        <script type="text/javascript">
+            $(function() {
+                if ($.trim($('#toc').html()).length != 0) {
+                    return;
+                }
+                var reg = /<h(\d) id=\"(toc_\d{1,2})\">(.*?)<\/h\d>/g;
+                var postStr = $.trim($('#post-content').html());
+                var tocList = postStr.match(reg)
+                $('#toc').html(func(tocList, 0, ""));
+            });
+            function func(tocList, index, hn tocHtml) {
+                if (index >= tocList.length - 1) {
+                    return;
+                }
+                var reg = /<h(\d) id=\"(toc_\d{1,2})\">(.*?)<\/h\d>/g;
+                var currToc = tocList[index];
+                var currHn = currToc.replace(reg, "$1");
+                var currId = currToc.replace(reg, "$2");
+                var currText = currToc.replace(reg, "$3");
+                var currHtml = "<ul>";
+                currHtml += "</ul>"
+                return tocHtml;
+            }
+        </script>
