@@ -120,6 +120,10 @@ pre{background-color: #f8f8f8;border-radius:0px;}
 .blog-post {
   margin-bottom: 60px;
 }
+.post-footer {
+  margin-top: 60px;
+}
+
 .blog-post-title > a,
 .blog-post-title > a:hover,
 .blog-post-title > a:focus{
@@ -130,8 +134,6 @@ pre{background-color: #f8f8f8;border-radius:0px;}
   margin-bottom: 20px;
   color: #999;
 }
-
-
 
 
 /*

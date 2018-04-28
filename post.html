@@ -1,9 +1,8 @@
 <script type="text/javascript">
-    $(function() {
-        $('{{ post.url }}').addClass('active');
-    });
+$(function() {
+    $('{{ post.url }}').addClass('active');
+});
 </script>
-
 <div class="container markdown-body" id="content-wrap">
     <div class="row">
         <div class="col-sm-9 blog-main">
@@ -15,6 +14,16 @@
                 <div class="content-responsive" id="post-content">
                     {{ post.content }}
                 </div>
+                <div class="content-responsive post-footer">
+                    <blockquote>
+                        转载请注明出处：<a href="{{ siteURL }}{{ post.url }}">{{ pageTitle }}</a>
+                        <p>欢迎关注我的微信公众号：王肖Plus
+                            <br><img src="media/15196482316286/qrcode_for_weixin_public_account.jpg">
+                    </blockquote>
+                    <blockquote>我的博客会及时同步到腾讯云+社区，邀请大家一同入驻：
+                        <br><a href="https://cloud.tencent.com/developer/support-plan?invite_code=mqbbongvgxmp" target="__blank">https://cloud.tencent.com/developer/support-plan?invite_code=mqbbongvgxmp</a>
+                    </blockquote>
+                </div>
             </div>
             <!-- /.blog-post -->
             <div class="share-comment">
@@ -23,29 +32,28 @@
         </div>
         <!-- /.blog-main -->
         <!-- slider start -->
-
-
         <script type="text/javascript">
-            $(function() {
-                if ($.trim($('#toc').html()).length != 0) {
-                    return;
-                }
-                var reg = /<h(\d) id=\"(toc_\d{1,2})\">(.*?)<\/h\d>/g;
-                var postStr = $.trim($('#post-content').html());
-                var tocList = postStr.match(reg)
-                $('#toc').html(func(tocList, 0, ""));
-            });
-            function func(tocList, index, hn tocHtml) {
-                if (index >= tocList.length - 1) {
-                    return;
-                }
-                var reg = /<h(\d) id=\"(toc_\d{1,2})\">(.*?)<\/h\d>/g;
-                var currToc = tocList[index];
-                var currHn = currToc.replace(reg, "$1");
-                var currId = currToc.replace(reg, "$2");
-                var currText = currToc.replace(reg, "$3");
-                var currHtml = "<ul>";
-                currHtml += "</ul>"
-                return tocHtml;
+        $(function() {
+            if ($.trim($('#toc').html()).length != 0) {
+                return;
             }
+            var reg = /<h(\d) id=\"(toc_\d{1,2})\">(.*?)<\/h\d>/g;
+            var postStr = $.trim($('#post-content').html());
+            var tocList = postStr.match(reg)
+            $('#toc').html(func(tocList, 0, ""));
+        });
+
+        function func(tocList, index, hn tocHtml) {
+            if (index >= tocList.length - 1) {
+                return;
+            }
+            var reg = /<h(\d) id=\"(toc_\d{1,2})\">(.*?)<\/h\d>/g;
+            var currToc = tocList[index];
+            var currHn = currToc.replace(reg, "$1");
+            var currId = currToc.replace(reg, "$2");
+            var currText = currToc.replace(reg, "$3");
+            var currHtml = "<ul>";
+            currHtml += "</ul>"
+            return tocHtml;
+        }
         </script>
