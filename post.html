@@ -40,20 +40,32 @@ $(function() {
             var reg = /<h(\d) id=\"(toc_\d{1,2})\">(.*?)<\/h\d>/g;
             var postStr = $.trim($('#post-content').html());
             var tocList = postStr.match(reg)
-            $('#toc').html(func(tocList, 0, ""));
+            $('#toc').html(func(tocList, 0, 1, ""));
         });
 
-        function func(tocList, index, hn tocHtml) {
-            if (index >= tocList.length - 1) {
-                return;
+        function func(tocList, index, hn, tocHtml) {
+            if (index > tocList.length - 1) {
+                return tocHtml;
             }
-            var reg = /<h(\d) id=\"(toc_\d{1,2})\">(.*?)<\/h\d>/g;
+            var reg = /<h(\d) id=\"toc_(\d{1,2})\">(.*?)<\/h\d>/g;
             var currToc = tocList[index];
             var currHn = currToc.replace(reg, "$1");
             var currId = currToc.replace(reg, "$2");
             var currText = currToc.replace(reg, "$3");
-            var currHtml = "<ul>";
-            currHtml += "</ul>"
-            return tocHtml;
+            var currLi = "<li><a href=\"#toc_" + currId + "\">" + currText + "</a></li>";
+            if (currHn == hn) {
+                tocHtml += currLi;
+            } else if (currHn > hn) {
+                for (var i = 0; i < currHn - hn; i++) {
+                    tocHtml += "<ul>"
+                }
+                tocHtml += currLi;
+            } else if (currHn < hn) {
+                for (var i = 0; i < hn - currHn; i++) {
+                    tocHtml += "</ul>"
+                }
+                tocHtml += currLi;
+            }
+            return func(tocList, index + 1, currHn, tocHtml);
         }
         </script>
