@@ -11,14 +11,14 @@
             <a href="{{ p.url }}">{{ p.name }}&nbsp;({{ p.count }})</a><br>
         {% /for %}
     </div>
-    <div class="sidebar-module">
+    <div class="sidebar-module" id="sidebar-recent-article">
         <h4>最近文章</h4> {% for p in recentPosts %} 
         {% if currentLoop.currentIndex < 10 %} <a href="{{ p.url }}">{{ p.title }}</a>
             <br /> {% /if %} {% /for %}
     </div>
-    <div class="sidebar-module" id="sidebar-toc">
+    <div class="sidebar-module sidebar-toc" id="sidebar-toc" style="display: none;">
         <h4>目录</h4>
-        <div id="toc"></div>
+        <div id="toc" style="margin-left: -2em;"></div>
     </div>
     <div class="sidebar-module">
         <h4>公众号推荐</h4>
