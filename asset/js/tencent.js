@@ -1,7 +1,5 @@
     $(document).ready(function() {
-        $('#closeTencentModal').modal({
-            show: true
-        });
+        $('#closeTencentModal').modal('show');
         $("#closeTencentModal").on('hide.bs.modal', function(e) {
             window.location.href = "https://wxdut.com";
             return false;
