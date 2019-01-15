@@ -1,12 +1,12 @@
     $(document).ready(function() {
-        // $('#closeTencentModal').modal({
-        //     show: true
-        // });
-        // $("#closeTencentModal").on('hide.bs.modal', function(e) {
-        //     window.location.href = "https://wxdut.com";
-        //     return false;
-        // });
-        // return;
+        $('#closeTencentModal').modal({
+            show: true
+        });
+        $("#closeTencentModal").on('hide.bs.modal', function(e) {
+            window.location.href = "https://wxdut.com";
+            return false;
+        });
+        return;
         $('#confirm-commit-btn').click(function(event) {
             $('#modal').modal('hide');
             window.location.href = "https://wxdut.com";
