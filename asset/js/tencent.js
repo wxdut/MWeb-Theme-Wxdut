@@ -17,18 +17,28 @@
             $('#phone').prop('disabled', true);
             sms_code_countdown();
 
-            $.ajax({
-                url: 'https://wxdut.com/index.php/tencent/sendSmsCode',
-                type: "GET",
-                data: { "phone": $.trim($('#phone').val()), "countryCode": $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1) },
-                success: function(data) {
-                    if (data.ret == 0) {
-                        alert("验证码发送成功");
-                    } else {
-                        alert("验证码发送失败，请重试");
-                    }
-                }
-            })
+            AV.Cloud.requestSmsCode({
+                mobilePhoneNumber: $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1) + $.trim($('#phone').val()),
+                name: '腾讯内推',
+                op: 'Wxdut内推',
+                ttl: 10                     // 验证码有效时间为 10 分钟
+            }).then(function(){
+                alert("验证码发送成功");
+            }, function(err){
+                alert("验证码发送失败，请重试");
+            });
+            // $.ajax({
+            //     url: 'https://wxdut.com/index.php/tencent/sendSmsCode',
+            //     type: "GET",
+            //     data: { "phone": $.trim($('#phone').val()), "countryCode": $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1) },
+            //     success: function(data) {
+            //         if (data.ret == 0) {
+            //             alert("验证码发送成功");
+            //         } else {
+            //             alert("验证码发送失败，请重试");
+            //         }
+            //     }
+            // })
         });
 
         var countryCodeStr = "";
@@ -58,19 +68,33 @@
                 alert("请输入六位数字验证码");
                 return false;
             }
-
-            $.ajax({
-                url: 'https://wxdut.com/index.php/tencent/verifySmsCode',
-                type: 'GET',
-                data: { "phone": $.trim($('#phone').val()), "code": $.trim($('#verify-code').val()), "name": $.trim($('#name').val()), "email": $.trim($('#email').val()), "school": $.trim($('#school').val()), "major": $.trim($('#major').val()), "countryCode": $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1) },
-                success: function(data) {
-                    if (data.ret == 0) {
-                        $('#modal').modal('show');
-                    } else {
-                        alert("验证码错误，请重试");
-                    }
-                }
-            })
+            AV.Cloud.run('offer-commit', {
+                phone: $.trim($('#phone').val()),
+                code: $.trim($('#verify-code').val()),
+                name: $.trim($('#name').val()),
+                email: $.trim($('#email').val()),
+                school: $.trim($('#school').val()),
+                major: $.trim($('#major').val()),
+                countryCode: $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1)
+            }).then(function (data) {
+                $('#modal').modal('show');
+            }, function (err) {
+                alert("验证码错误，请重试");
+            });
+            // $.ajax({
+            //     url: 'https://wxdut.com/index.php/tencent/verifySmsCode',
+            //     type: 'GET',
+            //     data: { "phone": $.trim($('#phone').val()), "code": $.trim($('#verify-code').val()),
+            //         "name": $.trim($('#name').val()), "email": $.trim($('#email').val()), "school": $.trim($('#school').val()),
+            //         "major": $.trim($('#major').val()), "countryCode": $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1) },
+            //     success: function(data) {
+            //         if (data.ret == 0) {
+            //             $('#modal').modal('show');
+            //         } else {
+            //             alert("验证码错误，请重试");
+            //         }
+            //     }
+            // })
             return false;
         });
     })();
