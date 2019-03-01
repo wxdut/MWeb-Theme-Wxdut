@@ -1,10 +1,11 @@
     $(document).ready(function() {
-        $('#closeTencentModal').modal('show');
-        $("#closeTencentModal").on('hide.bs.modal', function(e) {
-            window.location.href = "https://wxdut.com";
-            return false;
-        });
-        return;
+        // 关闭内推
+        // $('#closeTencentModal').modal('show');
+        // $("#closeTencentModal").on('hide.bs.modal', function(e) {
+        //     window.location.href = "https://wxdut.com";
+        //     return false;
+        // });
+        // return;
         $('#confirm-commit-btn').click(function(event) {
             $('#modal').modal('hide');
             window.location.href = "https://wxdut.com";
