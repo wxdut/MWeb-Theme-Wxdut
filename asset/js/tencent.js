@@ -6,6 +6,9 @@
         //     return false;
         // });
         // return;
+
+        AV.init('2nXbFYzdoqj5FAx7hfCQC0qy-gzGzoHsz', '16nEBcbmAC9UrosE0jFJ7AtK');
+
         $('#confirm-commit-btn').click(function(event) {
             $('#modal').modal('hide');
             window.location.href = "https://wxdut.com";
@@ -20,11 +23,11 @@
             AV.Cloud.requestSmsCode({
                 mobilePhoneNumber: $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1) + $.trim($('#phone').val()),
                 name: '腾讯内推',
-                op: 'Wxdut内推',
-                ttl: 10                     // 验证码有效时间为 10 分钟
+                ttl: 2                     // 验证码有效时间为 2 分钟
             }).then(function(){
                 alert("验证码发送成功");
             }, function(err){
+                console.log(err.message);
                 alert("验证码发送失败，请重试");
             });
             // $.ajax({
@@ -76,9 +79,10 @@
                 school: $.trim($('#school').val()),
                 major: $.trim($('#major').val()),
                 countryCode: $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1)
-            }).then(function (data) {
+            }).then(function () {
                 $('#modal').modal('show');
             }, function (err) {
+                console.log(err.message);
                 alert("验证码错误，请重试");
             });
             // $.ajax({
