@@ -21,7 +21,7 @@
             sms_code_countdown();
 
             AV.Cloud.requestSmsCode({
-                mobilePhoneNumber: $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1) + $.trim($('#phone').val()),
+                mobilePhoneNumber: $('#selectpicker').val() + $.trim($('#phone').val()),
                 name: '腾讯内推',
                 ttl: 2                     // 验证码有效时间为 2 分钟
             }).then(function(){
@@ -78,7 +78,7 @@
                 email: $.trim($('#email').val()),
                 school: $.trim($('#school').val()),
                 major: $.trim($('#major').val()),
-                countryCode: $('#selectpicker').val().substring($('#selectpicker').val().indexOf("+") + 1)
+                countryCode: $('#selectpicker').val()
             }).then(function () {
                 $('#modal').modal('show');
             }, function (err) {
