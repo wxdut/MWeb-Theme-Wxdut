@@ -83,7 +83,7 @@
                 $('#modal').modal('show');
             }, function (err) {
                 console.log(err.message);
-                alert("err.message");
+                alert(err.message);
             });
             // $.ajax({
             //     url: 'https://wxdut.com/index.php/tencent/verifySmsCode',
