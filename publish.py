@@ -5,7 +5,7 @@ import re
 
 watermark = "?imageView2/0/interlace/1/q/75|watermark/2/text/d3hkdXQuY29t/font/5b6u6L2v6ZuF6buR/fontsize/320/fill/IzAwMDAwMA==/dissolve/100/gravity/SouthEast/dx/10/dy/10|imageslim"
 
-path = "/Users/wx/Library/Containers/com.coderforart.MWeb3/Data/Documents/themes/Site/wxdut.com"
+path = "./../../Site/wxdut.com"
 
 os.chdir(path)
 for file in os.listdir("./"):
