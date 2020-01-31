@@ -1,0 +1,99 @@
+<div class="container markdown-body" id="content-wrap">
+    <div class="page-post">
+        <h2 class="blog-post-title">{{post.title}}</h2>
+        <div class="page-content content-responsive">
+            {{ post.content }}
+        </div>
+    </div>
+</div>
+<!-- <div class="container" id="content-wrap">
+    <form class="needs-validation" novalidate method="post" id="form">
+        <div class="form-group">
+            <label for="name">姓名（请填写真实姓名）</label>
+            <input type="text" class="form-control" id="name" placeholder="张三" required>
+        </div>
+        <div class="form-group">
+            <label for="email">邮箱（内推成功后会收到收集信息的邮件，非常重要）</label>
+            <input type="email" class="form-control" id="email" placeholder="tencent@gmail.com" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">手机（海外手机号请先选择国家代码）</label>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <select id="selectpicker" class="selectpicker" data-live-search="true">
+                    </select>
+                    <!-- <input type="text" class="" id="d" value="86" required> -->
+                </div>
+                <input type="text" class="form-control" id="phone" placeholder="手机号码" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="school">学校（学校全称）</label>
+            <input type="text" class="form-control" id="school" placeholder="大连理工大学" required>
+        </div>
+        <div class="form-group">
+            <label for="major">专业（专业大类）</label>
+            <input type="text" class="form-control" id="major" placeholder="软件工程" required>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="agreement" required>
+                <label class="form-check-label" for="agreement"><a href="tencent_agreement.html">同意内推协议</a></label>
+                <div class="invalid-feedback">
+                    请先同意内推协议
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col">
+                <input type="text" class="form-control" id="verify-code" placeholder="请输入接收到的验证码">
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary" id="send-sms-code-btn">发送验证码</button>
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">立即提交</button>
+        </div>
+    </form>
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">内推成功</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    内推信息已提交成功，请留意邮件和短信通知。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="confirm-commit-btn">知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="closeTencentModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">暂无法内推</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    当前非春招内推时间，关闭内推服务。<br>你可以关注公众号留意开放提醒。<br>
+                    <img src="https://cdn.wxdut.com/media/15196482316286/qrcode_for_weixin_public_account.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="share-comment">-->
+        <!--{{ commentAndShareCode }}-->
+    <!--</div>-->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js"></script>
+<script src="asset/js/tencent.js"></script> -->
