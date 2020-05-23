@@ -15,10 +15,9 @@ def handleDir(path):
             print 'file is not handled: ' + file
 
 def handleFile(file):
-    if file.endswith("tencent.js"):
+    if file.endswith("tencent.js") or file.endswith("xxx_office_html2pdf.js"):
         bak = file + '.js'
         os.rename(file, bak)
-#        os.system("java -jar /Users/hiwang/Library/Containers/com.coderforart.MWeb3/Data/Documents/themes/SiteThemes/MWeb-Theme-Wxdut/js-compiler.jar --js " + bak + " --js_output_file " + file)
         os.system("java -jar ./../../SiteThemes/MWeb-Theme-Wxdut/js-compiler.jar --js " + bak + " --js_output_file " + file)
         os.remove(bak)
 #        java -jar js-compiler.jar --js file --js_output_file file

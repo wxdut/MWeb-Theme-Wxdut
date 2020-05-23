@@ -1,0 +1,46 @@
+<div class="container markdown-body" id="content-wrap">
+    <div class="page-post">
+        <h2 class="blog-post-title">{{post.title}}</h2>
+        <div class="page-content content-responsive">
+            {{ post.content }}
+        </div>
+    </div>
+</div>
+<div class="container markdown-body" id="content-wrap">
+
+<form>
+
+    <div class="form-group">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroupFileAddon01">选择文件</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                       aria-describedby="inputGroupFileAddon01" onchange="handleFiles(files)"
+                       accept="application/zip,text/html">
+                <label class="custom-file-label" for="inputGroupFile01" id="inputGroupLabel01">选择文件（不大于4M）</label>
+            </div>
+        </div>
+        <small class="form-text text-muted">只支持html或zip格式。如果你想把多个html转成pdf，可以打包成zip上传，系统会批量处理。</small>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">邮箱</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <small id="emailHelp" class="form-text text-muted">转换成功后系统会把下载链接发送到你的邮箱，请确保邮箱可用。</small>
+    </div>
+
+    <button id="commit-normal" type="submit" class="btn btn-primary" onclick="return onSubmit();">立即转换</button>
+
+    <button id="commit-loading" class="btn btn-primary" type="button" disabled style="display: none;">
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        上传中
+    </button>
+
+</form>
+    
+</div>
+
+<script src="https://unpkg.com/qiniu-js@2.5.5/dist/qiniu.min.js"></script>
+<script src="asset/js/office_html2pdf.js"></script>
