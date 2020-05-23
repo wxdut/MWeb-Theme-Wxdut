@@ -12,7 +12,6 @@ $retEmail = '';
 $aping = false;
 
 $(document).ready(function () {
-    $('#commit-loading').hide();
     stepToken();
 });
 
