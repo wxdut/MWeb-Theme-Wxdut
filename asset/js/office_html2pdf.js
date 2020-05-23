@@ -1,15 +1,17 @@
+(function () {
+    $uploadToken = '';
+    $uploadRandom = '';
+    $progressToken = false;
 
-$uploadToken = '';
-$uploadRandom = '';
-$progressToken = false;
+    $uploadFile = '';
+    $progressUpload = false;
 
-$uploadFile = '';
-$progressUpload = false;
+    $retFileKey = '';
+    $retEmail = '';
 
-$retFileKey = '';
-$retEmail = '';
-
-$aping = false;
+    $aping = false;
+    
+})();
 
 $(document).ready(function () {
     stepToken();
