@@ -1,14 +1,11 @@
+
 <div class="container markdown-body" id="content-wrap">
-    <div class="page-post">
+
+	<div class="page-post">
         <h2 class="blog-post-title">{{post.title}}</h2>
-        <div class="page-content content-responsive">
-            {{ post.content }}
-        </div>
     </div>
-</div>
-<div class="container markdown-body" id="content-wrap">
     
-    <h2 class="blog-post-title">时间戳转换</h2>
+    <h4>时间戳转换</h4>
 
 	<div style="display: flex;">
 		<input id="timestampInput" class="form-control" placeholder="" aria-label="时间戳">
@@ -19,6 +16,14 @@
 		<input id="timestampOutput" class="form-control" placeholder="" aria-label="时间戳">
 	</div>
 
+</div>
+
+<div class="container markdown-body" id="content-wrap">
+    <div class="page-post">
+        <div class="page-content content-responsive">
+            {{ post.content }}
+        </div>
+    </div>
 </div>
 
 <script src="asset/js/page-tools.js"></script>
