@@ -1,21 +1,33 @@
 $(document).ready(function() {
 
+	// 时间戳转换
+
 	$('#timestampInput').on('input',function(e){
     	this.value=this.value.replace(/[^\d]/g,'')
-    	refresh()
+    	refreshTimestrapOutput()
 	});
 
 	$('#timestampSelect').on('change',function(e){
-    	refresh()
+    	refreshTimestrapOutput()
+	});
+
+	// 大小写转换
+
+	$('#caseInput').on('input',function(e){
+		let val = this.value
+    	$('#caseUpper').val(val.toUpperCase())
+    	$('#caseLower').val(val.toLowerCase())
 	});
 
 });
 
-function refresh(argument) {
-	$('#timestampOutput').val(calcuate(parseInt($('#timestampInput').val()) * parseInt($('#timestampSelect').val())))
+// 时间戳转换
+
+function refreshTimestrapOutput(argument) {
+	$('#timestampOutput').val(calcuateTimestamp(parseInt($('#timestampInput').val()) * parseInt($('#timestampSelect').val())))
 }
 
-function calcuate(time = +new Date()) {
+function calcuateTimestamp(time = +new Date()) {
 	if (isNaN(time)) {
 		return
 	}

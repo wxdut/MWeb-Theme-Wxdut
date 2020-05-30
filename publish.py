@@ -15,7 +15,7 @@ def handleDir(path):
             print 'file is not handled: ' + file
 
 def handleFile(file):
-    isJsToCompile = file.endswith("tencent.js") or file.endswith("office_html2pdf.js") or file.endswith("footer.html.js")
+    isJsToCompile = file.endswith("tencent.js") or file.endswith("office_html2pdf.js") or file.endswith("page-tools.js") or file.endswith("footer.html.js")
     if isJsToCompile:
         bak = file + '.js'
         os.rename(file, bak)
