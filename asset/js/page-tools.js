@@ -16,6 +16,9 @@ function refresh(argument) {
 }
 
 function calcuate(time = +new Date()) {
+	if (isNaN(time)) {
+		return
+	}
     var date = new Date(time + 8 * 3600 * 1000); // 增加8小时
     if (isNaN(date.getTime())) {
     	return "Invalid Timestamp"
